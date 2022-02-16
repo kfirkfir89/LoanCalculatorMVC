@@ -28,7 +28,7 @@
                 <p>Your Monthly Payments</p>
             </div>
             <p id="payment">
-                @Model.Payment.ToString()
+                @Model.Payment.ToString("C")
             </p>
 
             <div class="row">
@@ -53,16 +53,16 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-2">
             <div class="col"></div>
         </div>
     </div>
     @if (Model.Payments.Count > 0)
     {
-        <div class="row">
+        <div class="row mt-2">
             <div class="col">
                 <table id="scheduleTable" class="table table-striped table-hover">
-                    <thead class="text-white">
+                    <thead class="text-white table-dark">
                         <tr>
                             <th>Month</th>
                             <th>Payment</th>
@@ -77,11 +77,11 @@
                         {
                             <tr>
                                 <td>@item.Month</td>
-                                <td>@item.Payment</td>
-                                <td>@item.MonthlyPrincipal</td>
-                                <td>@item.MonthlyInterest</td>
-                                <td>@item.TotalInterest</td>
-                                <td>@item.Balance</td>
+                                <td>@item.Payment.ToString("C")</td>
+                                <td>@item.MonthlyPrincipal.ToString("C")</td>
+                                <td>@item.MonthlyInterest.ToString("C")</td>
+                                <td>@item.TotalInterest.ToString("C")</td>
+                                <td>@item.Balance.ToString("C")</td>
                             </tr>
                         }
                     </tbody>
